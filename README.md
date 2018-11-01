@@ -16,6 +16,7 @@
 - 注意BIOS设置。硬盘模式选择AHCI，关闭启动相关的安全选项，开启雷电接口的相关选项；根据需要关闭触摸屏等功能；
 - Mojave下的声卡需要用AppleALC注入layout_id=11，[详见](https://github.com/the-darkvoid/XPS9360-macOS/issues/85)
 其他方式可能会导致诸如声卡无法驱动、能驱动但是导致kernel_task占用大量CPU资源等异常情况(都是泪)
+- 使用ALCPlugFix来解决睡眠唤醒耳机孔无声的问题，脚本来自DalianSky。
 - 其他待补充
 
 # 问题
