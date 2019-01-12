@@ -384,7 +384,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>debug=0x12a acpi_layer=0x08 -v msgbuf=512000 -disablegfxfirmware acpi_level=0x02 alcid=11</string>
+		<string>debug=0x12a acpi_layer=0x08 -v darkwake=no msgbuf=512000 acpi_level=0x02 alcid=11</string>
 		<key>DefaultVolume</key>
 		<string>macOS</string>
 		<key>NeverHibernate</key>
@@ -392,7 +392,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>2</integer>
 		<key>XMPDetection</key>
 		<integer>1</integer>
 	</dict>
@@ -411,12 +411,8 @@
 		<array/>
 		<key>Audio</key>
 		<dict>
-			<key>AFGLowPowerState</key>
-			<false/>
 			<key>Inject</key>
 			<integer>0</integer>
-			<key>ResetHDA</key>
-			<false/>
 		</dict>
 		<key>NoDefaultProperties</key>
 		<false/>
@@ -432,26 +428,11 @@
 	</dict>
 	<key>GUI</key>
 	<dict>
-		<key>Custom</key>
-		<dict>
-			<key>Entries</key>
-			<array>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>Hidden</key>
-					<string>Always</string>
-					<key>Ignore</key>
-					<false/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>UEFI internal</string>
-					<key>Type</key>
-					<string>Other</string>
-				</dict>
-			</array>
-		</dict>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
+		</array>
 		<key>Mouse</key>
 		<dict>
 			<key>DoubleClick</key>
@@ -464,18 +445,11 @@
 			<integer>8</integer>
 		</dict>
 		<key>Scan</key>
-		<dict>
-			<key>Entries</key>
-			<true/>
-			<key>Legacy</key>
-			<true/>
-			<key>Linux</key>
-			<true/>
-			<key>Tool</key>
-			<true/>
-		</dict>
+		<true/>
+		<key>ScreenResolution</key>
+		<string>1600x900</string>
 		<key>Theme</key>
-		<string>SimpleThemeDark</string>
+		<string>HighSierra</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -520,7 +494,7 @@
 				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx in AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				RiV1VCUwNHgA
@@ -532,22 +506,6 @@
 				<key>Replace</key>
 				<data>
 				RiV1VHh4eHgA
-				</data>
-			</dict>
-			<dict>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				dkZI/wU=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelKBLGraphicsFramebuffer</string>
-				<key>Replace</key>
-				<data>
-				60ZI/wU=
 				</data>
 			</dict>
 		</array>
@@ -564,37 +522,41 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>08/08/2017</string>
+		<string>09/17/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP141.88Z.0167.B00.1708080034</string>
+		<string>MBP152.88Z.F000.B00.1809171524</string>
 		<key>Board-ID</key>
-		<string>Mac-B4831CEBD52A0C4C</string>
+		<string>Mac-827FB448E656EC26</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02752608GUDP001M</string>
+		<string>C02753108GUJH4RUE</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
-		<string>MacBookPro14,1</string>
+		<string>1.0</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
 		<string>0x09</string>
+		<key>EfiVersion</key>
+		<string>220.200.252.0.0</string>
 		<key>Family</key>
-		<string>MacBook</string>
+		<string>MacBook Pro</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE137</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
 		<key>LocationInChassis</key>
 		<string>Part Component</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Memory</key>
 		<dict>
-			<key>Channels</key>
-			<integer>2</integer>
 			<key>Modules</key>
 			<array>
 				<dict>
@@ -630,19 +592,17 @@
 					<string>SK Hynix</string>
 				</dict>
 			</array>
-			<key>SlotCount</key>
-			<integer>2</integer>
 		</dict>
 		<key>Mobile</key>
 		<true/>
+		<key>PlatformFeature</key>
+		<string>0x1A</string>
 		<key>ProductName</key>
-		<string>MacBookPro14,1</string>
+		<string>MacBookPro15,2</string>
 		<key>SerialNumber</key>
-		<string>C02VL2HRHV36</string>
+		<string>C02W1028JHCD</string>
 		<key>SmUUID</key>
-		<string>A47E7BC1-DECA-439E-A6C4-DB8B6767C700</string>
-		<key>Trust</key>
-		<true/>
+		<string>956F3885-FE69-4106-8E42-139456E6B264</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
