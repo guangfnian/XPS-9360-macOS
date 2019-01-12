@@ -6,7 +6,7 @@
 - 启动参数加入darkwake=no，以解决睡眠唤醒耳机无声的问题
 - 加入参数alcid=11，驱动声卡
 - 去除参数igfxcflbklt=opcode
-- 机型修改为MBP15,2
+- 机型修改为MBP15,2（修改为此机型后按此[issue](https://github.com/the-darkvoid/XPS9360-macOS/issues/96)操作来解决要求输密码时的延迟问题）
 
 ## 硬件配置
 - Intel i7 8550u
